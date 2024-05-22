@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consulta CNPJ</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="js/scripts.js" type="module"></script>
+    <script src="js/Apis/ApiRequest.js" type="module"></script>
+    <script src="js/Apis/CNPJApi/ApiCNPJ.js" type="module"></script>
+  </head>
+  <body>
+    <div class="consulta-container">
+      <header>
+        <h1>Gerenciar CNPJ</h1>
+      </header>
+      <form id="consulta-form">
+        <p>Cadastrar/Atualizar o CNPJ</p>
+        <div class="form-control">
+          <input
+            type="text"
+            id="consulta-input"
+            placeholder="CNPJ Para Consulta"
+          />
+          <button type="submit">
+            <i class="fa-thin fa-plus"></i>
+          </button>
+        </div>
+      </form>
+      <form id="edit-form" class="hide">
+        <h1>Editar Dados CNPJ</h1>
+        <div id="edit-form-controlCNPJ" class="form-control">    
+          <h3 id="edit-labelCNPJ">CNPJ</h3>
+          <input type="text" id="cnpj-input" />
+        </div>
+        <div id="edit-form-control" class="form-control">
+          <h3 id="edit-labelNome">Nome</h3>
+          <input type="text" id="nome-input" />
+        </div>
+        <div id="edit-form-control" class="form-control">
+          <h3 id="edit-labelAtividadePrincipal">Atuação</h3>
+          <input type="text" id="atividadePrincipal-input" />
+        </div>
+        <div id="edit-form-control" class="form-control">
+          <h3 id="edit-labelTipo">Tipo</h3>
+          <input type="text" id="tipo-input" />
+        </div>
+        <div id="edit-form-control" class="form-control">
+          <h3 id="edit-labelPorte">Porte</h3>
+          <input type="text" id="porte-input" />
+        </div>
+        
+        <div id="form-control-edit" class="form-control">    
+          <button id="cancel-edit-btn">Cancelar</button>
+          <button id="confirmar-edit-btn">Confirmar</button>
+        </div>      
+      </form>
+
+      <div id="BarraFerramentas">
+        <div id="search">
+          <h4>Pesquisar:</h4>
+          <form>
+            <input type="text" id="search-input" placeholder="Buscar..." />
+            <button id="erase-button">
+              <i class="fa-solid fa-delete-left"></i>
+            </button>
+          </form>
+        </div>
+        <div id="filter">
+          <h4>Filtrar:</h4>
+          <select id="filter-select">
+            <option value="all">Crescente</option>
+            <option value="done">Descrecente</option>
+          </select>
+        </div>
+      </div>     
+      <div id="consulta-list">       
+        <div class="consulta">
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
